@@ -6,13 +6,13 @@ Rails.application.routes.draw do
    get '/users', to: 'users#index', as: 'user'
 
    #:create
-   post '/users', to: 'user#create', as: 'create_user'
+   post '/users', to: 'users#create', as: 'create_user'
 
    #new
-   get 'users/new', to: 'user#new', as: 'new_user'
+   get 'users/new', to: 'users#new', as: 'new_user'
 
    #edit
-   get 'users/:id/edit', to: 'user#edit', as: 'edit_user'
+   get 'users/:id/edit', to: 'users#edit', as: 'edit_user'
 
    #show
    get 'users/:id', to: 'users#show', as: 'show_user'
