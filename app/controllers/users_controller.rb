@@ -27,11 +27,21 @@ class UsersController < ApplicationController
         end
      end
 
-    #  def update
+     def update
+       user = User.find_by(id: params[:id])
+       
+       if user.save && user.update(params.require(:user).permit(:name, :email)) 
+          render(json: user) 
+         else 
+            render(json: user.errors.full_messages,status: 422)
+        end
+     end
 
-    #  end
+     def destroy
+         user = User.find_by(id: params[:id])
+          
+         user.destroy
 
-    #  def destroy
-
-    #  end
+         return user
+     end
 end

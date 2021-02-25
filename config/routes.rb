@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
 
   #update
-  put '/users/:id', to: 'users#update'
+  patch '/users/:id', to: 'users#update'
 
   #destroy
   delete 'users/:id', to: 'users#destroy'
